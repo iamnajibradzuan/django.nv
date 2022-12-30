@@ -42,7 +42,7 @@ jobs:
           python manage.py test taskManager
   semgrep:
     name: Scan
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     # Skip any PR created by dependabot to avoid permission issues
     if: (github.actor != 'dependabot[bot]')
     steps:
