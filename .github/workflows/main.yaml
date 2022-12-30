@@ -24,7 +24,7 @@ jobs:
           python manage.py check
 
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     needs: build
     steps:
       - uses: actions/checkout@v2
@@ -42,7 +42,7 @@ jobs:
           python manage.py test taskManager
 
   integration:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     needs: test
     steps:
       - run: echo "This is an integration step"
@@ -50,7 +50,7 @@ jobs:
         continue-on-error: true
 
   prod:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     needs: integration
     steps:
       - run: echo "This is a deploy step."
